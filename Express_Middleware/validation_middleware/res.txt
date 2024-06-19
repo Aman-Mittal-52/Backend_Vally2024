@@ -1,0 +1,92 @@
+bad request.some data is incorrect.
+bad request.some data is incorrect.
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
+ID is a number
+Name is a string
+Description is a string
+Rating is a number
+Genre is a string
+Cast is an array of strings
