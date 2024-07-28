@@ -1,0 +1,56 @@
+1. What is a NoSQL Database, and explain the types of NoSQL databases?
+ANS: "NoSQL" stands for "No Structured Query Language", these types of databases are flexible to do CRUD operations.ex - MongoDB,
+
+2. What is the difference between SQL and NoSQL databases?
+ANS: 
+1.SQL is a structured query language, while NoSQL is a non-structured query language.
+2. Queries: SQL uses the powerful SQL language for complex queries, whereas NoSQL databases have their own query languages or methods.
+3.SQL uses tables with predefined schemas, while NoSQL offers flexible schemas that can adapt to changes.
+
+3. How to choose between MongoDB and MySQL based on your requirements?
+ANS: 
+-------------Go for MySQL if:
+
+~ Structured Data: Your data has a well-defined structure with fixed attributes that won't change frequently. (e.g., user accounts, product catalogs with simple details)
+~ Relational Queries: Your application relies heavily on complex queries that join data across multiple tables. (e.g., finding users who purchased a specific product within a date range)
+~ ACID Transactions: You require strong data consistency and transactional guarantees (Atomicity, Consistency, Isolation, Durability). (e.g., financial transactions)
+Existing Expertise: Your team has experience with SQL and relational database management.
+
+------------Go for MongoDB if:
+
+~ Unstructured or Semi-structured Data: Your data is constantly evolving or has a flexible structure that might change over time. (e.g., sensor data, social media posts with text, images, and comments)
+~ Horizontal Scalability: You anticipate significant data growth and need easy horizontal scaling by adding more servers.
+~ Fast Inserts and Updates: Your application involves frequent insertions and updates of large datasets.
+~ Flexibility and Agility: You prioritize rapid development and a schema-less approach that adapts to changing data requirements.
+
+4. What are collections and documents in a MongoDB database?
+ANS: In MongoDB there are databases and in DBS there are some collections where we store the data.
+
+5. What is BSON? What is the difference between BSON and JSON?
+ANS: BSON is the Binary JSON used to store data in binary format. BSON is the Binary form of data and JSON is the key value pair form of data
+
+6. What are MongoDB Compass and MongoDB Shell used for?
+ANS: MongoDB compass is the GUI way to interact with MongoDB while MongoDB Shell is the CLI way to interact with MongoDB
+
+7. What is the difference between "insertMany" and "insertOne"?
+ANS: "insertMany" and "insertOne" are the functions in MongoDB to insert the data objects.
+1. insertOne is to insert one data object (Query ~ db.collectionName.insertOne({data obj}))
+2. insertMany is to insert more than one data objects (Query ~ db.collectionName.insertMany([{data obj},{data obj},{data obj}]))
+
+8. What is the difference between deleteOne and deleteMany?
+ANS: deleteOne and deleteMany are the functions in MongoDB to delete the data objects.
+1. deleteOne is to delete one data object (Query ~ db.collectionName.deleteOne({data obj}))
+2. deleteMany is to delete more than one data objects (Query ~ db.collectionName.deleteMany([{data obj},{data obj},{data obj}]))
+
+9. How to read data in MongoDB? What is the difference between find and findOne?
+ANS: For reading the data in MongoDB you need to go the MongoDB compass (GUI) / MongoDB Shell. *Shell example- db.collectionName.find()*
+
+db.collectionName.find() get all the data objects in the collection and filtering by queries
+
+db.collectionName.findOne() will reteive only one first data and if there is any query..then returns bt filtering. 
+
+10. What is $set in MongoDB?
+ANS: $set is used to update the data in MongoDB (Query ~ db.colloectionName.updateOne({name:"Aman"},{$set:{age:76}})
+
+11. How to filter data using MongoDB?
+ANS: we can filter the data by db.collectionName.aggregate($match:{query}) and db. collectionName.find({query})
