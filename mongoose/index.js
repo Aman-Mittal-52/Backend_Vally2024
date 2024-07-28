@@ -1,7 +1,7 @@
 const express = require('express');
 const { connection } = require('./config/db');
-const UserModel  = require('./model/user.model');
-const ProductModel  = require('./model/product.model');
+const UserModel = require('./model/user.model');
+const ProductModel = require('./model/product.model');
 const productModel = require('./model/product.model');
 
 const port = 3000;
@@ -28,10 +28,10 @@ server.get('/get-user', async (req, res) => {
 });
 
 
-server.get('/findOne-user/:id',async (req,res)=>{
+server.get('/findOne-user/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        const user = await UserModel.find({_id:id})
+        const { id } = req.params;
+        const user = await UserModel.find({ _id: id })
         res.send(user)
     } catch (error) {
         res.send(error)
@@ -41,6 +41,11 @@ server.get('/findOne-user/:id',async (req,res)=>{
 server.post('/create-user', async (req, res) => {
     try {
         const { username, email, age } = req.body;
+        const existedUser = await UserModel.findOne({ username })
+
+        if (existedUser && Object.keys(existedUser).length !== 0) {
+            return res.status(400).send("user already exists")
+        }
         const user = new UserModel({
             username,
             email,
@@ -54,20 +59,20 @@ server.post('/create-user', async (req, res) => {
     }
 });
 
-server.patch('/update-user/:id',async (req,res)=>{
+server.patch('/update-user/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        const updatedOne = await UserModel.findByIdAndUpdate({_id:id},req.body)
+        const { id } = req.params;
+        const updatedOne = await UserModel.findByIdAndUpdate({ _id: id }, req.body)
         res.send(`update the doc,${id},${updatedOne}`)
     } catch (error) {
         res.send(error)
     }
 })
 
-server.delete('/delete-user/:id',async (req,res)=>{
+server.delete('/delete-user/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        const deleted = await UserModel.findByIdAndDelete({_id:id})
+        const { id } = req.params;
+        const deleted = await UserModel.findByIdAndDelete({ _id: id })
         res.send(`delete the doc,${id},${deleted}`)
     } catch (error) {
         res.send(error)
@@ -84,10 +89,10 @@ server.get('/get-products', async (req, res) => {
 });
 
 
-server.get('/findOne-product/:id',async (req,res)=>{
+server.get('/findOne-product/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        const product = await productModel.find({_id:id})
+        const { id } = req.params;
+        const product = await productModel.find({ _id: id })
         res.send(product)
     } catch (error) {
         res.send(error)
@@ -110,20 +115,20 @@ server.post('/create-product', async (req, res) => {
     }
 });
 
-server.patch('/update-product/:id',async (req,res)=>{
+server.patch('/update-product/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        const updatedOne = await ProductModel.findByIdAndUpdate({_id:id},req.body)
+        const { id } = req.params;
+        const updatedOne = await ProductModel.findByIdAndUpdate({ _id: id }, req.body)
         res.send(`update the doc,${id}`)
     } catch (error) {
         res.send(error)
     }
 })
 
-server.delete('/delete-product/:id',async (req,res)=>{
+server.delete('/delete-product/:id', async (req, res) => {
     try {
-        const {id} = req.params;
-        await ProductModel.findByIdAndDelete({_id:id})
+        const { id } = req.params;
+        await ProductModel.findByIdAndDelete({ _id: id })
         res.send(`delete the doc,${id}`)
     } catch (error) {
         res.send(error)
